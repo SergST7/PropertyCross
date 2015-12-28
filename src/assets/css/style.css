@@ -1,0 +1,38 @@
+
+.wrapper {
+    padding: 20px;
+    margin: 0 auto;
+    width: 600px;
+}
+
+.wrap-title{
+    margin: 20px;
+}
+
+img {
+    margin: 10px;
+}
+
+.error {
+    margin: 10px;
+    text-align: center;
+    color: #ff2128;
+}
+
+.loader img{
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+}
+
+form input.ng-invalid.ng-dirty {
+    border: 2px solid #FA787E;
+}
+
+form input.ng-valid.ng-dirty {
+    border: 2px solid #78FA89;
+}
+
+.property-item {
+    border-bottom: 2px solid grey;
+}

@@ -1,0 +1,18 @@
+<div>
+    <button class="btn btn-primary btn-lg btn-block" ng-click="back()">< Back</button>
+    <div class='error' ng-if="errorMessage">{{errorMessage}}</div>
+
+    <div class="wrap-title">
+    <h4 class="text-center"><b>{{data.title}}</b></h4>
+    </div>
+
+
+    <img class="img-rounded center-block" ng-src={{data.img_url}}>
+    <span><b>{{data.price_formatted}}</b></span>
+    <h4>{{data.keywords}}</h4>
+
+    <p>{{data.summary}}</p>
+    <a href={{data.lister_url}} target="_blank">{{data.lister_name}}</a>
+
+
+</div>

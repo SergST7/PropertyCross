@@ -1,0 +1,36 @@
+<div>
+
+        <h1>PropertyCross</h1>
+
+    <form name="searchForm" ng-submit='onSubmit()' novalidate role="form">
+        <div class="form-group">
+            <label for="search-input">
+                <p>Use the form below to search for houses to buy.
+                    You can search by place-name, postcode</p>
+            </label>
+            <input id="search-input"
+                   type="text"
+                   class="form-control"
+                   placeholder="Enter place name"
+                   name="mycity"
+                   ng-focus="clearError()"
+                   ng-model="city"
+                   ng-minlength='3'
+                   ng-maxlength='32'
+                   ng-pattern="/^[a-z1-9]*$/"
+                   required/>
+        </div>
+
+        <div class="error" ng-messages='searchForm.mycity.$error' ng-if='searchForm.mycity.$dirty' role="alert">
+            <div ng-message='pattern'>Only lowercase letters (a-z) and numbers are allowed</div>
+            <div ng-message='minlength'>Your field is too short</div>
+            <div ng-message='maxlength'>Your field is too long</div>
+            <div ng-message='required'>You did not enter a field</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled='searchForm.$invalid'>SEARCH</button>
+    </form>
+
+    <div class="error alert alert-danger fade in" role="alert" ng-if="data.errorMessage">{{data.errorMessage}}</div>
+    <div class="loader"><img src="assets/img/loading-05.gif" ng-if="data.loader"/></div>
+</div>
