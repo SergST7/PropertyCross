@@ -1,0 +1,26 @@
+<div>
+    <button class="btn btn-primary btn-lg btn-block" ng-click="back()"> < Back</button>
+    <div class='error alert alert-danger fade in
+    ' ng-if="errorMessage">{{errorMessage}}</div>
+
+    <div ng-if="data.listings.length">
+        <div class="wrap-title">
+        <h4 class="text-center"><b>{{data.listings.length}} of {{data.total_results}} matches </b></h4>
+        </div>
+
+        <div class="property-item" ng-repeat=" item in data.listings" ng-click="currentItemView(item)">
+
+            <img class="img-rounded pull-left" ng-src={{item.thumb_url}}>
+            <h5><b>{{item.title}}</b></h5>
+
+            <span><b>{{item.price_formatted}}</b></span>
+
+            <p>{{item.summary}}</p>
+            <div clas="clear"></div>
+        </div>
+        <!--<button class="btn btn-primary btn-lg btn-block" ng-click="moreREsults()">More results</button>-->
+    </div>
+
+
+
+</div>
