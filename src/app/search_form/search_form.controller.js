@@ -11,6 +11,7 @@ function myCtrl($scope, $http, $location, networkService, dataService) {
         loader: false
     };
 
+
     $scope.clearError = function () {
         $scope.data.errorMessage = null;
         $scope.data.city = '';
@@ -20,8 +21,8 @@ function myCtrl($scope, $http, $location, networkService, dataService) {
         $scope.data.loader = true;
         networkService.getData($scope.city)
 
-            .success(function (data) {
-                dataService.data = data.response;
+            .success(function (res) {
+                dataService.data = res.data;
                 console.log(dataService.data);
                 $location.path('/search-results');
             })
